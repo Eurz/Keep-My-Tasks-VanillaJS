@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --header-height: 60px;
+    --shadow-hover: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(235, 235, 235);
+    color: rgb(51, 51, 51, 0.9);
+}
+h1 {
+    font-size: 1.5em;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+/**/
+#app {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.header {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    height: var(--header-height);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1.5em;
+}
+/* TASKS */
+.tasks-container {
+}
+.tasks-list {
+    margin-block: calc(var(--header-height) + 10px);
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    gap: 10px;
+}
+
+.task {
+    background-color: #fff;
+    padding: 1em;
+    width: 100%;
+    /* transition: transform 0.35s; */
+}
+.task:hover {
+    box-shadow: 0 0 10px var(--shadow-hover);
+    /* transform: scale(1.01); */
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: inherit;
+}
+.task-title,
+.task-content {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px;
+    margin: 0;
+    font-size: inherit;
+}
+.task-title:focus,
+.task-content:focus {
+    background-color: rgba(235, 235, 235, 0.3);
+}
+.task-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.task-content {
+    resize: none;
+}
+.task.fullscreen {
+    border: 1px solid red;
+}
+/* DOCKER */
+#docker {
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: #fff;
+}
+
+/* BUTTONS */
+.btn {
+    border: none;
+    outline: none;
+    font-size: inherit;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-add-task {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 15px;
+    top: -20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-groups {
+    text-align: right;
+}
+.btn-groups .btn {
+    margin-left: 10px;
+    padding: 0.5em;
+    font-size: 0.85em;
+}
+
+/* @MEDIAS*/
+@media screen and (min-width: 589px) {
+    .task {
+        /* width: 25%; */
+    }
+}
